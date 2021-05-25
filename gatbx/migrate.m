@@ -146,4 +146,4 @@ function [Chrom, ObjV] = migrate(Chrom, SUBPOP, MigOpt, ObjV);
 
 
 % End of function
-
+%fyyug
