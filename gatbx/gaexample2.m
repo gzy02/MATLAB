@@ -1,22 +1,29 @@
 clc
-clear all
+clear
 close all
+thnum=input("请输入阈值个数");
+
 %% 画出函数图
-figure(1);
-lbx=-2;ubx=2; %函数自变量x范围【-2,2】
-lby=-2;uby=2; %函数自变量y范围【-2,2】
-ezmesh('y*sin(2*pi*x)+x*cos(2*pi*y)',[lbx,ubx,lby,uby],50);   %画出函数曲线
-hold on;
+if thnum==2
+    figure(1);
+    lbx=-2;ubx=2; %函数自变量x范围【-2,2】
+    lby=-2;uby=2; %函数自变量y范围【-2,2】
+    lbz=-2;ubz=2; %函数自变量y范围【-2,2】
+    fmesh('y*sin(2*pi*x)+x*cos(2*pi*y)',[lbx,ubx,lby,uby],50);   %画出函数曲线
+    hold on;
+end
+
 %% 定义遗传算法参数
 NIND=40;        %个体数目
 MAXGEN=50;      %最大遗传代数
-PRECI=20;       %变量的二进制位数
+PRECI=8*n;       %变量的二进制位数
 GGAP=0.95;      %代沟
 px=0.7;         %交叉概率
 pm=0.01;        %变异概率
 trace=zeros(3,MAXGEN);                        %寻优结果的初始值
 FieldD=[PRECI PRECI;lbx lby;ubx uby;1 1;0 0;1 1;1 1];                      %区域描述器
 Chrom=crtbp(NIND,PRECI*2);                      %初始种群
+
 %% 优化
 gen=0;                                  %代计数器
 XY=bs2rv(Chrom,FieldD);                 %计算初始种群的十进制转换

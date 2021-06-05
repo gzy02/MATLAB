@@ -1,10 +1,10 @@
 function main2()
-clear all
+clear
 close all
 clc
 global chrom oldpop fitness lchrom  popsize cross_rate mutation_rate yuzhisum
 global maxgen  m n fit gen yuzhi A B C oldpop1 popsize1 b b1 fitness1 yuzhi1 x
-A=imread('4.jpg');     %读入医学图像
+A=imread('../4.jpg');     %读入医学图像
 %A=imresize(A,0.4);
 B=rgb2gray(A);         %灰度化
 C=B;
