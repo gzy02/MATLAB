@@ -4,7 +4,7 @@ close all
 
 thnum=input("请输入阈值个数:");
 A=zeros(thnum,1);%列向量 thnum*1
-Img=imread("../4.jpg");
+Img=imread("2.png");
 Pic=rgb2gray(Img);
 [count,x]=imhist(Pic);
 mysum=PrefixSum(count);

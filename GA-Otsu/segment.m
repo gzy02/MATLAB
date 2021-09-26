@@ -13,7 +13,8 @@ for i=1:1:m
         else
             for k=1:1:thd_n-1
                 if res(i,j)>=thd(k) && res(i,j)<thd(k+1)
-                    res(i,j)=int8(k*255/thd_n);
+                    % res(i,j)=int8(k*255/thd_n);
+                    res(i,j)=int8((thd(k)+thd(k+1))/2);
                 end
             end
         end
